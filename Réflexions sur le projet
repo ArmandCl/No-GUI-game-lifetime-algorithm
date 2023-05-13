@@ -1,1 +1,20 @@
+Rappel du déroulement du projet (cycle en V):
+ - compréhension du sujet
+ - conception classe/méthode (UML)
+ - conception test
+ - Ecriture du programme
+ - Exécution des tests
+ - IHM(si nous sommes dans les temps)
 
+Les différentes Classes : 
+  - Client : cette classe permet de lancer le programme, elle ne contient qu’une méthode( main)
+
+  - LectureFichierTexte : permet de lire un fichier scénario pour les rendres exploitables
+
+  - Quete : sépare les données des quêtes dans des champs (chNumero, chPosition, chPrecondition…)
+
+  - Scenario : permettra mettre chaque quête dans son scénario grâce à une méthode ajout()
+
+  - Solution : récupère le scénario en cours et le joueur puis applique les solutions efficaces et exhaustives. Il change donc les champs (exp, pos, …) du joueur.
+
+  - Joueur : contient les informations sur le joueur( expérience, position,temps mit pour compléter le scénario, quêtes complétées) tout se remet à 0 à la fin d’un scénario. On fera la majorité des calculs dans cette classe
