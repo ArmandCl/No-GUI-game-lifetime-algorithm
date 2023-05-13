@@ -8,13 +8,25 @@ Rappel du déroulement du projet (cycle en V):
 
 Les différentes Classes : 
   - Client : cette classe permet de lancer le programme, elle ne contient qu’une méthode( main)
+    champs : 
+    méthodes : main
 
   - LectureFichierTexte : permet de lire un fichier scénario pour les rendres exploitables
+    champs : 
+    méthodes : lecture
 
   - Quete : sépare les données des quêtes dans des champs (chNumero, chPosition, chPrecondition…)
+    champs : chNumero, chPosition, chPrecondition, chDuree, chExperience, chIntitule
+    méthodes : Quete, getNumero, getPosition, getPrecondition, getDuree, getExperience, getIntitule, extraitPos, extraitPrecondition, toString
 
   - Scenario : permettra mettre chaque quête dans son scénario grâce à une méthode ajout()
+    champs : treeMapScenario
+    méthodes : ajout, toString
 
   - Solution : récupère le scénario en cours et le joueur puis applique les solutions efficaces et exhaustives. Il change donc les champs (exp, pos, …) du joueur.
+    champs : chScenario, chJoueur
+    méthodes : solutionEfficace, solutionExhaustive
 
   - Joueur : contient les informations sur le joueur( expérience, position,temps mit pour compléter le scénario, quêtes complétées) tout se remet à 0 à la fin d’un scénario. On fera la majorité des calculs dans cette classe
+    champs : chPositionJoueur, chTempsTotalScenario, chHistoriqueQueteJoueur
+    méthodes : Joueur,getEXP, ajoutEXP, getPositionJoueur, miseAJourPositionJoueur, getDuree, miseAJourDuree, getHistoriqueQuete, historiqueQuete
