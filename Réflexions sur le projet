@@ -25,7 +25,7 @@ Les différentes Classes :
 
   - Solution : récupère le scénario en cours et le joueur puis applique les solutions efficaces et exhaustives. Il change donc les champs (exp, pos, …) du joueur.
     champs : chScenario, chJoueur
-    méthodes : solutionEfficace, solutionExhaustive
+    méthodes : Solution, solutionEfficace, solutionExhaustive, toString
 
   - Joueur : contient les informations sur le joueur( expérience, position,temps mit pour compléter le scénario, quêtes complétées) tout se remet à 0 à la fin d’un scénario. On fera la majorité des calculs dans cette classe
     champs : chPositionJoueur, chTempsTotalScenario, chHistoriqueQueteJoueur
