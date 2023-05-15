@@ -17,7 +17,7 @@ Les différentes Classes :
 
   - Quete : sépare les données des quêtes dans des champs (chNumero, chPosition, chPrecondition…)
     champs : chNumero, chPosition, chPrecondition, chDuree, chExperience, chIntitule
-    méthodes : Quete, getNumero, getPosition, getPrecondition, getDuree, getExperience, getIntitule, extraitPos, extraitPrecondition, toString
+    méthodes : Quete, getNumero, getPosition, getPrecondition, getDuree, getExperience, getIntitule, extraitPos, extraitPrecondition, hasPrecondition, toString
 
   - Scenario : permettra mettre chaque quête dans son scénario grâce à une méthode ajout()
     champs : treeMapScenario
