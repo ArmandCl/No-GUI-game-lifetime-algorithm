@@ -45,4 +45,16 @@ public class JoueurTest {
         assertEquals(14, joueur2.getTemps()); // le temps est de 14 car : (5-0)+(1-0)+8
         assertTrue(joueur2.queteCompleteeGloutonne(0));
     }
+    @Test
+    void queteCompleteeGloutonne(){
+        Joueur joueur = new Joueur();
+        Quete quete = new Quete("18|(16, 6)|((2, 16),)|1|100|vaincre Géant du feu");
+
+        //le joueur complete la quete numéro 18, ça va ajouté le numéro 18 dans la liste des quetes completées par le joueur
+        joueur.completerQueteGloutonne(quete);
+
+        //on regarde si la liste des quêtes complétée contient bien le bon numéro de quête
+        assertTrue(joueur.queteCompleteeGloutonne(quete.getNumero())); // vrai car le joueur à fait la quete
+        assertFalse(joueur.queteCompleteeGloutonne(19)); //faux par ce que le joueur n'a pas fait la quete
+    }
 }
