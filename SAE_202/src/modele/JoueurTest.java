@@ -57,4 +57,18 @@ public class JoueurTest {
         assertTrue(joueur.queteCompleteeGloutonne(quete.getNumero())); // vrai car le joueur à fait la quete
         assertFalse(joueur.queteCompleteeGloutonne(19)); //faux par ce que le joueur n'a pas fait la quete
     }
+    @Test
+    void toutesQuetesCompletees() {
+        Joueur joueur = new Joueur();
+        Scenario scenario = new Scenario();
+
+        // Créer des quêtes non complétées et les ajouter au scénario
+        Quete quete1 = new Quete("18|(16, 6)|((2, 16),)|1|100|vaincre Géant du feu");
+        Quete quete2 = new Quete("19|(8, 12)|((15, 5),(13, 9))|2|150|retrouver artefact perdu");
+        scenario.getChQuetes().add(quete1);
+        scenario.getChQuetes().add(quete2);
+
+        assertFalse(joueur.toutesQuetesCompletees(scenario)); // faux car le joueur n'a pas réaliser les quetes 18 et 19 du scénario
+        assertTrue(joueur.toutesQuetesCompletees(new Scenario())); // vrai car on lui donne un répertoire qui est vide donc il à forcement completer toutes le scénario
+    }
 }
