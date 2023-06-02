@@ -71,4 +71,17 @@ public class JoueurTest {
         assertFalse(joueur.toutesQuetesCompletees(scenario)); // faux car le joueur n'a pas réaliser les quetes 18 et 19 du scénario
         assertTrue(joueur.toutesQuetesCompletees(new Scenario())); // vrai car on lui donne un répertoire qui est vide donc il à forcement completer toutes le scénario
     }
+    @Test
+    void calculerDistance() {
+        Joueur joueur = new Joueur();
+
+        joueur.getPositionX();  // la position du joueur est à zéro en X
+        joueur.getPositionY();  // la position du joueur est à zéro en Y
+        int[] positionQueteA = {3, 4};
+
+        int res_attendu = 7; //le resultat attendu est 7 car en X on fait 3-0 et en Y on fait 4-0 puis on additionne X+Y donc 3+4=7
+
+        assertEquals(res_attendu,joueur.calculerDistance(positionQueteA));
+        assertNotEquals(10,joueur.calculerDistance(positionQueteA));
+    }
 }
