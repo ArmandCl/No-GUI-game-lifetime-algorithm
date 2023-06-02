@@ -84,4 +84,32 @@ public class JoueurTest {
         assertEquals(res_attendu,joueur.calculerDistance(positionQueteA));
         assertNotEquals(10,joueur.calculerDistance(positionQueteA));
     }
+    @Test
+    void getQuetesDisponiblesGloutonne(){
+
+        //instanciation des champs
+        Joueur joueur = new Joueur();
+        Scenario scenario_complet = new Scenario(); // scénario qui contiendra les trois quetes
+        ArrayList<Quete> liste_quete_un = new ArrayList<>(); // liste qui va contenir seulement la quete 1
+
+        Quete quete1 = new Quete("1|(4, 3)|()|2|100|explorer pic de Bhanborim");
+        Quete quete2 = new Quete("2|(3, 1)|((1,),)|1|150|dialoguer avec Kaela la chaman des esprits");
+        Quete quete3 = new Quete("4|(3, 2)|((2,),)|6|100|vaincre Loup Géant");
+
+        scenario_complet.ajout(quete1);
+        scenario_complet.ajout(quete2);
+        scenario_complet.ajout(quete3);
+
+        liste_quete_un.add(quete1);
+
+        // on stock ce que retourne la méthode dans une variable liste_quete_dispo
+        ArrayList <Quete> liste_quete_dispo = joueur.getQuetesDisponiblesGloutonne(scenario_complet); //liste_quete_dispo doit contenir seulement la quete numéro 1 car c'est la seul quete que le joueur peut réaliser
+
+
+        assertEquals(liste_quete_un,liste_quete_dispo); // la liste avec seulement la quete 1 doit etre la meme que la liste renvoyée par la méthode getQuetesDisponiblesGloutonne
+        assertTrue(liste_quete_dispo.contains(quete1)); // la liste renvoyée par getQuetesDisponiblesGloutonne doit contenir la quete 1
+        assertFalse(liste_quete_dispo.contains(quete3)); // la liste renvoyée par getQuetesDisponiblesGloutonne ne doit contenir la quete 3, car les préconditions ne sont pas respectées, elle n'est donc pas disponible
+        assertNotEquals(scenario_complet.getChQuetes(),liste_quete_dispo);
+
+    }
 }
