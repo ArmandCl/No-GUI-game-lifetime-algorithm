@@ -6,6 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 public class QueteTest {
+
     @Test
     void extraitPrecond() {
         // on crée un tableau d'entier qui sera la précondition attendue par la méthode extraitPrecond
@@ -31,5 +32,31 @@ public class QueteTest {
         precond_differente[3] = 7;
 
         assertNotEquals(precond_differente,precondition_quete1); // [0,7,7,7] != [2,16,0,0]
+    }
+
+    @Test
+    void extraitPos(){
+        // on crée un tableau de deux entiers qui sera la position attendue par la méthode extraitPos
+        int[] tab_attendu = new int[2];
+        tab_attendu[0]=16;
+        tab_attendu[1]=6;
+
+        //quete d'exemple dont la position est [16,6]:
+        Quete quete = new Quete("18|(16, 6)|((2, 16),)|1|100|vaincre Géant du feu");
+        int[] position_quete1 = quete.extraitPos("(16 ,6)");
+
+        assertArrayEquals(tab_attendu,position_quete1);
+
+        //nouveau tableau avec la position inverse de ce qui est attendu [6,16]
+        int[] position_inverse = new int[2];
+        position_inverse[0]=6;
+        position_inverse[1]=16;
+
+        assertNotEquals(position_inverse,position_quete1); // [16,6] != [6,16]
+
+        // nuoveau tableau avec comme position [0,0]
+        int[] position_zero = new int[2];
+
+        assertNotEquals(position_zero,position_quete1); // [0,0] != [6,16]
     }
 }
