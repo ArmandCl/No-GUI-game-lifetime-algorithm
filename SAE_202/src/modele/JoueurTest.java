@@ -112,4 +112,21 @@ public class JoueurTest {
         assertNotEquals(scenario_complet.getChQuetes(),liste_quete_dispo);
 
     }
+    @Test
+    void preconditionsSatisfaitesGloutonne(){
+        Joueur joueur = new Joueur();
+
+        Quete quete1 = new Quete("1|(4, 3)|()|2|100|explorer pic de Bhanborim");
+        Quete quete2 = new Quete("2|(3, 1)|((1,),)|1|150|dialoguer avec Kaela la chaman des esprits");
+        Quete quete3 = new Quete("4|(3, 2)|((2,1),(5,))|6|100|vaincre Loup Géant");
+
+        assertTrue(joueur.preconditionsSatisfaitesGloutonne(quete1)); // la précondition est satifaite car elle n'en a pas
+        joueur.completerQueteGloutonne(quete1);
+
+        assertTrue(joueur.preconditionsSatisfaitesGloutonne(quete2)); // la précondition de la quete 2 est satisfaite donc on peut faire la quete
+        joueur.completerQueteGloutonne(quete2);
+
+        assertFalse(joueur.preconditionsSatisfaitesGloutonne(quete3)); // faux parce que la précondition de la quete 4 n'est pas satisfaite, le joueur n'a pas fait la quete numéro 5
+
+    }
 }
