@@ -70,7 +70,7 @@ public class Joueur {
      * @return boolean True si la quete a été faite et False sinon
      */
     public boolean queteCompleteeGloutonne(int numeroQuete) {
-
+        return chQuetesCompleteesGloutonne.contains(numeroQuete);
     }
 
     public boolean queteCompleteeExhaustive(int numeroQuete) {
