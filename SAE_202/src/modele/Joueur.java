@@ -202,7 +202,15 @@ public class Joueur {
      * @return quetesDisponibles ArrayList<Quete>
      */
     public ArrayList<Quete> getQuetesDisponiblesExhaustive(Scenario scenario) {
+        ArrayList<Quete> quetesDisponibles = new ArrayList<>();
+        // Parcours la liste quetes du scenario récuperer grace à .getQuetes (scenario.getQuetes())
+        for (Quete quete : scenario.getChQuetes()) {
+            if (!queteCompleteeExhaustive(quete.getNumero()) && preconditionsSatisfaitesExhaustive(quete)) {
+                quetesDisponibles.add(quete);
+            }
+        }
 
+        return quetesDisponibles;
     }
 
     /**
