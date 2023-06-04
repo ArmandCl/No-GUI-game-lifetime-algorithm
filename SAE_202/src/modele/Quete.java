@@ -84,7 +84,7 @@ public class Quete {
     }
 
     /**
-     * affiche une ligne de quête de maniere lisible avec toutes les informations utiles
+     * Affiche une ligne de quête de maniere lisible avec toutes les informations utiles
      *
      * @return String
      */
@@ -93,11 +93,13 @@ public class Quete {
     }
 
     /**
-     * permet d'avoir le numero d'une quete
+     * Permet d'avoir le numero d'une quete
      *
      * @return numero int
      */
     public int getNumero(){
+
+        return numero;
 
     }
 
