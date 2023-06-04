@@ -1,13 +1,21 @@
 package modele;
 
+import java.util.ArrayList;
+
 public class SolutionEfficace {
+    private Scenario scenario;
+    private Joueur joueur;
+    private boolean queteFinal;
+
     /**
      * methode constructeur de la classe Solution et permet d'instancier les deux champs
      * @param scenario Scenario
      * @param joueur Joueur
      */
-    public Solution(Scenario scenario, Joueur joueur) {
-
+    public SolutionEfficace(Scenario scenario, Joueur joueur) {
+        this.scenario = scenario;
+        this.joueur = joueur;
+        queteFinal = false;
     }
 
     /**
