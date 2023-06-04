@@ -90,7 +90,13 @@ public class Joueur {
      * @return boolean False si toutes les quetes du scenario n'ont pas été fini et True si toutes les quetes sont fini
      */
     public boolean toutesQuetesCompletees(Scenario scenario) {
-
+        ArrayList<Quete> quetesScenario = scenario.getChQuetes();
+        for (Quete quete : quetesScenario) {
+            if (!chQuetesCompleteesGloutonne.contains(quete.getNumero())) {
+                return false;
+            }
+        }
+        return true;
     }
 
     /**
