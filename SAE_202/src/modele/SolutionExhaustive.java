@@ -113,11 +113,7 @@ public class SolutionExhaustive {
      * Elle parcourt toutes les quêtes disponibles jusqu'à ce que toutes soient complétées.
      */
     public void solutionExhaustive() {
-
-
+        parcourirQuetes();
     }
-
-
-
-
 }
+
