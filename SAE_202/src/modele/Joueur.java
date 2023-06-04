@@ -376,6 +376,8 @@ public class Joueur {
      */
     public int getChNbQuetes(){
 
+        return chNbQuetes;
+
     }
 
 
