@@ -35,7 +35,14 @@ public class Joueur {
      * @param quete Quete La quete fait par le joueur
      */
     public void completerQueteGloutonne(Quete quete) {
-
+        if (quete.getNumero() != 0){
+            chExperience += quete.getExperience();
+        }
+        chPositionX = quete.getPos()[0];
+        chPositionY = quete.getPos()[1];
+        chTemps += quete.getDuree();
+        chNbQuetes += 1;
+        chQuetesCompleteesGloutonne.add(quete.getNumero());
     }
 
     public void completerQueteExhaustive(Quete quete) {
