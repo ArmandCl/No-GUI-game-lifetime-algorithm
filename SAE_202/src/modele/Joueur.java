@@ -30,7 +30,7 @@ public class Joueur {
     }
 
     /**
-     * Cette methode permet d'ajouter les statistiques de la quete au joueur une fois cette derniere fini
+     * Cette methode permet au joueur de completer une quete et d'ajouter les statistiques de la quete au joueur une fois cette derniere fini
      *
      * @param quete Quete La quete fait par le joueur
      */
@@ -45,7 +45,20 @@ public class Joueur {
         chQuetesCompleteesGloutonne.add(quete.getNumero());
     }
 
+    /**
+     * Cette methode permet au joueur de completer une quete et d'ajouter les statistiques de la quete au joueur une fois cette derniere fini
+     *
+     * @param quete Quete La quete fait par le joueur
+     */
     public void completerQueteExhaustive(Quete quete) {
+        if (quete.getNumero() != 0){
+            chExperience += quete.getExperience();
+        }
+        chPositionX = quete.getPos()[0];
+        chPositionY = quete.getPos()[1];
+        chTemps += quete.getDuree();
+        chNbQuetes += 1;
+        chQuetesCompleteesExhaustive.add(quete.getNumero());
 
     }
 
