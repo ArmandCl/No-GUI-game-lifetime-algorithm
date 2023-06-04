@@ -27,8 +27,16 @@ public class Scenario {
 
     }
 
+    /**
+     * Ajoute un quete dans un scénario pour le treeMap
+     *
+     * @param numeroScenario le scénario dans lequel on veut ajouter la quete
+     * @param quete La quete que l'on veut ajouter au scénario
+     */
     public void ajouterQueteAuScenario(int numeroScenario, Quete quete) {
-
+        ArrayList<Quete> quetesScenario = chTreeMapScenario.getOrDefault(numeroScenario, new ArrayList<>());
+        quetesScenario.add(quete);
+        chTreeMapScenario.put(numeroScenario, quetesScenario);
     }
 
     /**
