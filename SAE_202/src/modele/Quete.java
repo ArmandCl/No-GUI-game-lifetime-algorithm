@@ -1,18 +1,41 @@
 package modele;
 
+import java.util.Scanner;
+
 /**
- * cette classe va être utilisé pour extraire des données relatives aux quêtes pour les rendre exploitables et plus lisibles / compréhensibles
+ * Cette classe va être utilisée pour extraire des données relatives aux quêtes pour les rendre exploitables et plus lisibles / compréhensibles
  */
 
 public class Quete {
+    private int numero;
+    private int[] pos = new int[2];
+    private int[] precond = new int[4];
+    private int duree;
+    private int experience;
+    private String intitule;
 
     /**
-     * methode constructeur de la classe Quete qui instancie les différents champs d'une certaine ligne
+     * Methode constructeur de la classe Quete qui instancie les différents champs d'une certaine ligne
      *
      * @param ligne String La ligne dont on veut extraire des informations
      */
     public Quete(String ligne){
+        Scanner scanner = new Scanner(ligne).useDelimiter("\\|");
+        while (scanner.hasNext()){
+            this.numero = scanner.nextInt();
 
+            String pos = scanner.next();
+            this.pos = extraitPos(pos);
+
+            String precond = scanner.next();
+            this.precond = extraitPrecond(precond);
+
+            this.duree = scanner.nextInt();
+            this.experience = scanner.nextInt();
+            this.intitule = scanner.next();
+
+
+        }
     }
 
     /**
