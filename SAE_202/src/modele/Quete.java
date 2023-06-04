@@ -61,13 +61,25 @@ public class Quete {
     }
 
     /**
-     * permet d'extraire la précondition et de la ranger dans une tableau d'entiers
+     * Permet d'extraire la précondition et de la ranger dans un tableau d'entiers
      *
      * @param precond String La précondition que l'on veut extraire
      * @return tabPreconditions int[] Le tableau avec la précondition
      */
     public int[] extraitPrecond(String precond){
-
+        int[] tabPreconditions = new int[4];
+        precond = precond.replace("(","");
+        precond = precond.replace(")","");
+        precond = precond.replace(" ","");
+        Scanner scanPrecondition = new Scanner(precond).useDelimiter(",");
+        int i = 0;
+        while (scanPrecondition.hasNext()){
+            String extrait = scanPrecondition.next();
+            if (!extrait.equals(""))
+                tabPreconditions[i] = Integer.parseInt(extrait);
+            i++;
+        }
+        return tabPreconditions;
     }
 
     /**
