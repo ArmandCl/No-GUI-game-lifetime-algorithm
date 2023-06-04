@@ -1,5 +1,6 @@
 package modele;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -88,6 +89,7 @@ public class Quete {
      * @return String
      */
     public  String toString(){
+        return  numero + " - "+ Arrays.toString(pos) + " - "+ Arrays.toString(precond) + " - " + duree + " - " + experience + " - " + intitule;
     }
 
     /**
