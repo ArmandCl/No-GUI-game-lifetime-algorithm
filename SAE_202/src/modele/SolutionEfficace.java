@@ -24,7 +24,25 @@ public class SolutionEfficace {
      * @return quetePlusProche Quete La quete la plus proche
      */
     private Quete trouverQuetePlusProche(ArrayList<Quete> quetesDisponibles) {
+        Quete quetePlusProche = null;
+        int distanceMin = Integer.MAX_VALUE;
 
+        for (Quete quete : quetesDisponibles) {
+            int distance = joueur.calculerDistance(quete.getPos());
+            if(quete.getNumero() == 0 && joueur.getExperience()>= quete.getExperience()){
+                if (distance < distanceMin) {
+                    distanceMin = distance;
+                    quetePlusProche = quete;
+                }
+            }else if (quete.getNumero() != 0){
+                if (distance < distanceMin) {
+                    distanceMin = distance;
+                    quetePlusProche = quete;
+                }
+            }
+
+        }
+        return quetePlusProche; // Sinon, retourner la quête la plus proche
     }
 
 
