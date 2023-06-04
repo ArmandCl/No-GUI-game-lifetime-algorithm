@@ -148,11 +148,13 @@ public class Quete {
     }
 
     /**
-     * permet d'avoir l'intitulé d'une quete
+     * Permet d'avoir l'intitulé d'une quete
      *
      * @return intitule String
      */
     public String getIntitule(){
+
+        return intitule;
 
     }
 
