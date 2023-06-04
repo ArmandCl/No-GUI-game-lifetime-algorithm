@@ -158,7 +158,12 @@ public class Joueur {
      * Affiche le chemin des quetes realisé par le joueur avec la solution gloutonne
      */
     public void afficherCheminQuetesGloutonne() {
+        System.out.println("Chemin des quêtes réalisées pour la solution gloutonne :");
 
+        // Parcours de la liste des numéros de quêtes complétées (chQuetesCompletees)
+        for (Integer numeroQuete : chQuetesCompleteesGloutonne) {
+            System.out.println("Quete numero " + numeroQuete);
+        }
     }
 
 
