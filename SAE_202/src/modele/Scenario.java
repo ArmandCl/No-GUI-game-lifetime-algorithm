@@ -17,11 +17,13 @@ public class Scenario {
     }
 
     /**
-     * ajoute une quete à une liste de quetes
+     * Ajoute une quete à une liste de quetes
      *
      * @param quete Quete La quete qu'on veut ajouter à la liste
      */
     public void ajout(Quete quete) {
+
+        chQuetes.add(quete);
 
     }
 
