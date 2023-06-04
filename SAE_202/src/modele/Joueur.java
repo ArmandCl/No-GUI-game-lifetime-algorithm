@@ -332,8 +332,33 @@ public class Joueur {
      * @param destinationX int La coordonnée X de la quête
      * @param destinationY int La coordonnée Y de la quête
      */
-    public void seDeplacerVers(int destinationX, int destinationY) {
+    public void seDeplacerVers(int destinationX, int destinationY) { ////////////a voir
+        int positionX = chPositionX;
+        int positionY = chPositionY;
+        //int temps = chTemps;
 
+        while (positionX != destinationX || positionY != destinationY) {
+            int deltaX = destinationX - positionX;
+            int deltaY = destinationY - positionY;
+
+            if (Math.abs(deltaX) > Math.abs(deltaY)) {
+                // Se déplacer horizontalement
+                int pasX = (deltaX > 0) ? 1 : -1;
+                positionX += pasX;
+            } else {
+                // Se déplacer verticalement
+                int pasY = (deltaY > 0) ? 1 : -1;
+                positionY += pasY;
+            }
+
+            chPositionX = positionX;
+            chPositionY = positionY;
+
+            // Ajouter un certain temps au champ chTemps du joueur
+            ajouterTempsDeplacement(1);
+            //temps = chTemps +1 ;
+            chDistance += 1;
+        }
     }
 
     /**
