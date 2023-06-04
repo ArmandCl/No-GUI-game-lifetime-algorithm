@@ -115,11 +115,13 @@ public class Quete {
     }
 
     /**
-     * permet d'avoir la précondition d'une quete
+     * Permet d'avoir la précondition d'une quete
      *
      * @return precond int[]
      */
     public int[] getPrecond(){
+
+        return precond;
 
     }
 
