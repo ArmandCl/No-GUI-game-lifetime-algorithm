@@ -39,13 +39,25 @@ public class Quete {
     }
 
     /**
-     * permet d'extraire la position et de la ranger dans une tableau d'entiers
+     * Permet d'extraire la position et de la ranger dans une tableau d'entiers
      *
      * @param position String La position que l'on veut extraire
      * @return tabpos int[] Le tableau avec la position
      */
     public int[] extraitPos(String position){
-
+        int[] tabpos = new int[2];
+        position = position.replace("(","");
+        position = position.replace(")","");
+        position = position.replace(" ","");
+        Scanner sc = new Scanner(position).useDelimiter(",");
+        int i = 0;
+        while (sc.hasNext()){
+            String extrait = sc.next();
+            if (!extrait.equals(""))
+                tabpos[i] = Integer.parseInt(extrait);
+            i++;
+        }
+        return tabpos;
     }
 
     /**
