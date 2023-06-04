@@ -137,11 +137,13 @@ public class Quete {
     }
 
     /**
-     * permet d'avoir l'experience d'une quete
+     * Permet d'avoir l'experience d'une quete
      *
      * @return experience int
      */
     public int getExperience(){
+
+        return experience;
 
     }
 
