@@ -166,6 +166,16 @@ public class Joueur {
         }
     }
 
+    /**
+     * Affiche le chemin des quetes realisé par le joueur avec la solution exhaustive
+     */
+    public void afficherCheminQuetesExhaustive() {
+        System.out.println("Chemin des quêtes réalisées pour la solution exhaustive :");
+        for (Integer numeroQuete : chQuetesCompleteesExhaustive) {
+            System.out.println("Quête numéro " + numeroQuete);
+        }
+    }
+
 
     /**
      * Permet d'avoir une liste de toutes les quetes realisable par le joueur
