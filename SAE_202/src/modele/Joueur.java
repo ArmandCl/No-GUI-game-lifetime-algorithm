@@ -64,7 +64,7 @@ public class Joueur {
 
 
     /**
-     * Cette methode regarde grace au numéro de quete si elle à deja ete complété
+     * Cette methode regarde grace au numéro de quete si elle a deja été complété
      *
      * @param numeroQuete int Le numero de la quete que l'on veut vérifier
      * @return boolean True si la quete a été faite et False sinon
@@ -73,8 +73,14 @@ public class Joueur {
         return chQuetesCompleteesGloutonne.contains(numeroQuete);
     }
 
+    /**
+     * Cette methode regarde grace au numéro de quete si elle a deja été complété
+     *
+     * @param numeroQuete int Le numero de la quete que l'on veut vérifier
+     * @return boolean True si la quete a été faite et False sinon
+     */
     public boolean queteCompleteeExhaustive(int numeroQuete) {
-
+        return chQuetesCompleteesExhaustive.contains(numeroQuete);
     }
 
     /**
