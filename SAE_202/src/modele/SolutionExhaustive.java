@@ -20,11 +20,29 @@ public class SolutionExhaustive {
 
     /**
      * Méthode pour trouver la quête la plus proche en termes de position
-     * @param quetesDisponibles ArrayList<Quete> La liste de quete qui sont disponible ( on a eu cette liste grace à la methode getQuetesDisponibles)
+     * @param quetesDisponibles ArrayList<Quete> La liste de quete qui sont disponibles (on a eu cette liste grâce à la methode getQuetesDisponibles)
      * @return quetePlusProche Quete La quete la plus proche
      */
     public Quete trouverQuetePlusProche(ArrayList<Quete> quetesDisponibles) {
+        Quete quetePlusProche = null;
+        int distanceMin = Integer.MAX_VALUE;
 
+        for (Quete quete : quetesDisponibles) {
+            int distance = joueur.calculerDistance(quete.getPos());
+            if(quete.getNumero() == 0 && joueur.getExperience()>= quete.getExperience()){
+                if (distance < distanceMin) {
+                    distanceMin = distance;
+                    quetePlusProche = quete;
+                }
+            }else if (quete.getNumero() != 0){
+                if (distance < distanceMin) {
+                    distanceMin = distance;
+                    quetePlusProche = quete;
+                }
+            }
+        }
+
+        return quetePlusProche;
     }
 
     /**
