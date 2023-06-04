@@ -119,8 +119,8 @@ public class Joueur {
      */
     public int getExperience() {
 
+        return chExperience;
     }
-
     /**
      *Permet de recuperer la position en X d'un joueur
      *
