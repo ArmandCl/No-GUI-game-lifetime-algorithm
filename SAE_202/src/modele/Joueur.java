@@ -106,7 +106,10 @@ public class Joueur {
      * @return int disctance en X et distance en Y
      */
     public int calculerDistance(int[] positionQuete) {
+        int distanceX = Math.abs(chPositionX - positionQuete[0]);
+        int distanceY = Math.abs(chPositionY - positionQuete[1]);
 
+        return distanceX + distanceY;
     }
 
     /**
