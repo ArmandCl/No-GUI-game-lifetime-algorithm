@@ -139,6 +139,8 @@ public class Joueur {
      */
     public int getPositionY() {
 
+        return chPositionY;
+
     }
 
     /**
