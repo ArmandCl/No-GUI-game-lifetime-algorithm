@@ -1,14 +1,19 @@
 package modele;
 
 
+import java.util.ArrayList;
+import java.util.TreeMap;
 
 public class Scenario {
+    private ArrayList<Quete> chQuetes;
+    private TreeMap<Integer, ArrayList<Quete>> chTreeMapScenario; //arbre avec pour clé un numéro de scénario et pour valeur une liste de quete
 
     /**
-     * methode constructeur de la classe Scenario qui sert à instancier les champs
+     * Methode constructeur de la classe Scenario qui sert à instancier les champs
      */
     public Scenario() {
-
+        chQuetes = new ArrayList<>();
+        chTreeMapScenario = new TreeMap<>();
     }
 
     /**
@@ -42,6 +47,4 @@ public class Scenario {
     public TreeMap<Integer, ArrayList<Quete>> getchTreeMapScenario() {
 
     }
-}
-
 }
