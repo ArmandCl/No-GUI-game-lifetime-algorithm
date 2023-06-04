@@ -85,6 +85,23 @@ public class JoueurTest {
         assertNotEquals(10,joueur.calculerDistance(positionQueteA));
     }
     @Test
+    void preconditionsSatisfaitesGloutonne(){
+        Joueur joueur = new Joueur();
+
+        Quete quete1 = new Quete("1|(4, 3)|()|2|100|explorer pic de Bhanborim");
+        Quete quete2 = new Quete("2|(3, 1)|((1,),)|1|150|dialoguer avec Kaela la chaman des esprits");
+        Quete quete3 = new Quete("4|(3, 2)|((2,1),(5,))|6|100|vaincre Loup Géant");
+
+        assertTrue(joueur.preconditionsSatisfaitesGloutonne(quete1)); // la précondition est satifaite car elle n'en a pas
+        joueur.completerQueteGloutonne(quete1);
+
+        assertTrue(joueur.preconditionsSatisfaitesGloutonne(quete2)); // la précondition de la quete 2 est satisfaite donc on peut faire la quete
+        joueur.completerQueteGloutonne(quete2);
+
+        assertFalse(joueur.preconditionsSatisfaitesGloutonne(quete3)); // faux parce que la précondition de la quete 4 n'est pas satisfaite, le joueur n'a pas fait la quete numéro 5
+
+    }
+    @Test
     void getQuetesDisponiblesGloutonne(){
 
         //instanciation des champs
@@ -113,20 +130,16 @@ public class JoueurTest {
 
     }
     @Test
-    void preconditionsSatisfaitesGloutonne(){
-        Joueur joueur = new Joueur();
+    void seDeplacerVers(){
+        Joueur joueur = new Joueur(); // le joueur a pour position [0,0]
+        Quete quete1 = new Quete("1|(4, 3)|()|2|100|explorer pic de Bhanborim"); // pos = [4,3]
 
-        Quete quete1 = new Quete("1|(4, 3)|()|2|100|explorer pic de Bhanborim");
-        Quete quete2 = new Quete("2|(3, 1)|((1,),)|1|150|dialoguer avec Kaela la chaman des esprits");
-        Quete quete3 = new Quete("4|(3, 2)|((2,1),(5,))|6|100|vaincre Loup Géant");
+        // on fait se déplacer le joueur vers la quete 1 en récupérant les positions X et Y de la quete
+        joueur.seDeplacerVers(quete1.getPos()[0],quete1.getPos()[1]);
 
-        assertTrue(joueur.preconditionsSatisfaitesGloutonne(quete1)); // la précondition est satifaite car elle n'en a pas
-        joueur.completerQueteGloutonne(quete1);
-
-        assertTrue(joueur.preconditionsSatisfaitesGloutonne(quete2)); // la précondition de la quete 2 est satisfaite donc on peut faire la quete
-        joueur.completerQueteGloutonne(quete2);
-
-        assertFalse(joueur.preconditionsSatisfaitesGloutonne(quete3)); // faux parce que la précondition de la quete 4 n'est pas satisfaite, le joueur n'a pas fait la quete numéro 5
+        assertEquals(4, joueur.getPositionX()); // le joueur s'est bien déplacé en posX = 4
+        assertEquals(3, joueur.getPositionY()); // le joueur s'est bien déplacé en posY = 3
+        assertEquals(7,joueur.getTemps()); // le temps de déplacement a bien été ajouté (+1 pour chaque déplacement)
 
     }
 }
