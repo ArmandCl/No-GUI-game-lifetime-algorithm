@@ -132,6 +132,8 @@ public class Quete {
      */
     public int getDuree(){
 
+        return duree;
+
     }
 
     /**
