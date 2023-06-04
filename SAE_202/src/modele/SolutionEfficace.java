@@ -23,7 +23,7 @@ public class SolutionEfficace {
      * @param quetesDisponibles ArrayList<Quete> La liste de quete qui sont disponible ( on a eu cette liste grace à la methode getQuetesDisponibles)
      * @return quetePlusProche Quete La quete la plus proche
      */
-    private Quete trouverQuetePlusProche(ArrayList<Quete> quetesDisponibles) {
+    public Quete trouverQuetePlusProche(ArrayList<Quete> quetesDisponibles) {
         Quete quetePlusProche = null;
         int distanceMin = Integer.MAX_VALUE;
 
