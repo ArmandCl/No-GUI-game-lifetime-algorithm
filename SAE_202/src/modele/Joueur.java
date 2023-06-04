@@ -128,6 +128,8 @@ public class Joueur {
      */
     public int getPositionX() {
 
+        return chPositionX;
+
     }
 
     /**
