@@ -104,11 +104,13 @@ public class Quete {
     }
 
     /**
-     * permet d'avoir la position d'une quete
+     * Permet d'avoir la position d'une quete
      *
      * @return pos int[]
      */
     public int[] getPos(){
+
+        return pos;
 
     }
 
