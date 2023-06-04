@@ -1,15 +1,21 @@
 package modele;
 
 
+import java.util.ArrayList;
+
 public class SolutionExhaustive {
 
+    private Scenario scenario;
+    private Joueur joueur;
+
     /**
-     * methode constructeur de la classe SolutionExhaustive et permet d'instancier les deux champs
+     * Methode constructeur de la classe SolutionExhaustive et permet d'instancier les deux champs
      * @param scenario Scenario
      * @param joueur Joueur
      */
     public SolutionExhaustive(Scenario scenario, Joueur joueur) {
-
+        this.scenario = scenario;
+        this.joueur = joueur;
     }
 
     /**
@@ -17,7 +23,7 @@ public class SolutionExhaustive {
      * @param quetesDisponibles ArrayList<Quete> La liste de quete qui sont disponible ( on a eu cette liste grace à la methode getQuetesDisponibles)
      * @return quetePlusProche Quete La quete la plus proche
      */
-    private Quete trouverQuetePlusProche(ArrayList<Quete> quetesDisponibles) {
+    public Quete trouverQuetePlusProche(ArrayList<Quete> quetesDisponibles) {
 
     }
 
