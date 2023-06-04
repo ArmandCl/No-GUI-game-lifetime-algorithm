@@ -48,5 +48,7 @@ public class Scenario {
      */
     public TreeMap<Integer, ArrayList<Quete>> getchTreeMapScenario() {
 
+        return chTreeMapScenario;
+
     }
 }
