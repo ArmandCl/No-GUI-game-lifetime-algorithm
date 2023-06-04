@@ -4,12 +4,28 @@ package modele;
 import java.util.ArrayList;
 
 public class Joueur {
+    private int chExperience;
+    private int chPositionX;
+    private int chPositionY;
+    private int chTemps;
+    private int chDistance;
+    private int chNbQuetes;
+    private final ArrayList<Integer> chQuetesCompleteesGloutonne;
+    private final ArrayList<Integer> chQuetesCompleteesExhaustive;
 
     /**
      * Methode constructeur de la classe Joueur,
      * elle sert à initialiser les champs à zero
      */
     public Joueur() {
+        chExperience = 0;
+        chPositionX = 0;
+        chPositionY = 0;
+        chTemps = 0;
+        chDistance = 0;
+        chNbQuetes = 0;
+        chQuetesCompleteesGloutonne = new ArrayList<>();
+        chQuetesCompleteesExhaustive = new ArrayList<>();
 
     }
 
