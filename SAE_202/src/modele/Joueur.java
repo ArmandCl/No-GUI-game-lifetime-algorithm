@@ -183,7 +183,15 @@ public class Joueur {
      * @return quetesDisponibles ArrayList<Quete> La liste des quetes
      */
     public ArrayList<Quete> getQuetesDisponiblesGloutonne(Scenario scenario) {
+        ArrayList<Quete> quetesDisponibles = new ArrayList<>();
+        // Parcours la liste quetes du scenario récuperer grace à .getQuetes (scenario.getQuetes())
+        for (Quete quete : scenario.getChQuetes()) {
+            if (!queteCompleteeGloutonne(quete.getNumero()) && preconditionsSatisfaitesGloutonne(quete)) {
+                quetesDisponibles.add(quete);
+            }
+        }
 
+        return quetesDisponibles;
     }
 
     /**
