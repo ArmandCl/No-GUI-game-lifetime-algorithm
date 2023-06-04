@@ -51,6 +51,60 @@ public class SolutionEfficace {
      * methode pour utiliser la solution gloutonne
      */
     public void solutionGloutonne() {
+        while (!queteFinal) {
+            ArrayList<Quete> quetesDisponibles = joueur.getQuetesDisponiblesGloutonne(scenario);
+            Quete quetePlusProche = trouverQuetePlusProche(quetesDisponibles);
 
+            if (quetesDisponibles.isEmpty()) {
+                // Toutes les quêtes ont été complétées, vérifier si c'est la solution complète
+                if (joueur.toutesQuetesCompletees(scenario)) {
+                    System.out.println("Solution Gloutonne complète atteinte!");
+                    System.out.println("Expérience totale: " + joueur.getExperience());
+                    System.out.println("Temps total: " + joueur.getTemps());
+                    System.out.println("Distance total: " + joueur.getChDistance());
+                    System.out.println("Nombre de quetes total: " + joueur.getChNbQuetes());
+                    joueur.afficherCheminQuetesGloutonne();
+                }
+                return;
+            }
+
+            // Vérifier si la quête la plus proche existe et si c'est la quête finale
+
+            if (quetePlusProche.getNumero() == 0 && joueur.getExperience() >= quetePlusProche.getExperience()) {
+                if (joueur.getPositionX() == quetePlusProche.getPos()[0] && joueur.getPositionY() == quetePlusProche.getPos()[1]) {
+                    // Réaliser la quête directement
+                    joueur.completerQueteGloutonne(quetePlusProche);
+                    quetesDisponibles.remove(quetePlusProche);
+                } else {
+                    // Se déplacer vers la quête la plus proche
+                    joueur.seDeplacerVers(quetePlusProche.getPos()[0], quetePlusProche.getPos()[1]);
+
+                    // Réaliser la quête
+                    joueur.completerQueteGloutonne(quetePlusProche);
+                    quetesDisponibles.remove(quetePlusProche);
+                }
+                System.out.println("Solution Gloutonne complète atteinte avec la quête finale!");
+                System.out.println("Expérience totale: " + joueur.getExperience());
+                System.out.println("Temps total: " + joueur.getTemps());
+                System.out.println("Distance total: " + joueur.getChDistance());
+                System.out.println("Nombre de quetes total: " + joueur.getChNbQuetes());
+                joueur.afficherCheminQuetesGloutonne();
+                queteFinal = true;
+            }else {
+                // Vérifier si le joueur est déjà sur la position de la quête
+                if (joueur.getPositionX() == quetePlusProche.getPos()[0] && joueur.getPositionY() == quetePlusProche.getPos()[1]) {
+                    // Réaliser la quête directement
+                    joueur.completerQueteGloutonne(quetePlusProche);
+                    quetesDisponibles.remove(quetePlusProche);
+                } else {
+                    // Se déplacer vers la quête la plus proche
+                    joueur.seDeplacerVers(quetePlusProche.getPos()[0], quetePlusProche.getPos()[1]);
+
+                    // Réaliser la quête
+                    joueur.completerQueteGloutonne(quetePlusProche);
+                    quetesDisponibles.remove(quetePlusProche);
+                }
+            }
+        }
     }
 }
