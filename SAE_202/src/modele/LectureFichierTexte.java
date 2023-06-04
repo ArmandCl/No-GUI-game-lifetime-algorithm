@@ -1,9 +1,12 @@
 package modele;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 
 
 public class LectureFichierTexte {
+    static Scenario scenario;
 
     /**
      * Permet de lire un fichier voulu en utilisant un scanner.
@@ -12,7 +15,18 @@ public class LectureFichierTexte {
      * @param fichier File Le fichier que nous voulons lire
      */
     public static void lecture(File fichier){
-
+        scenario = new Scenario();
+        try {
+            Scanner scanner = new Scanner(fichier);
+            while (scanner.hasNext()){
+                Quete quete = (new Quete(scanner.nextLine()));
+                scenario.ajout(quete);
+                //System.out.println(quete);
+            }
+        }
+        catch (FileNotFoundException e){
+            System.err.println(e.getMessage());
+        }
     }
 
     /**
