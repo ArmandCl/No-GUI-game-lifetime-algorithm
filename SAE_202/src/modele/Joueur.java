@@ -367,6 +367,7 @@ public class Joueur {
      */
     public int getChDistance(){
 
+        return chDistance;
     }
 
     /**
