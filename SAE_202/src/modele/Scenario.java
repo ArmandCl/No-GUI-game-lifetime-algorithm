@@ -31,14 +31,14 @@ public class Scenario {
 
     }
 
-    // Autres méthodes de la classe Scenario...
-
     /**
      * recupere le champ chQuetes
      *
      * @return chQuetes ArrayList<Quete>
      */
     public ArrayList<Quete> getChQuetes() {
+
+        return chQuetes;
 
     }
 
