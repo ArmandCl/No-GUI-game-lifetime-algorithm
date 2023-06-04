@@ -150,6 +150,8 @@ public class Joueur {
      */
     public int getTemps() {
 
+        return  chTemps;
+
     }
 
     /**
