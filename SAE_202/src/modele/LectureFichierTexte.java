@@ -36,5 +36,7 @@ public class LectureFichierTexte {
      */
     public Scenario getScenario() {
 
+        return scenario;
+
     }
 }
