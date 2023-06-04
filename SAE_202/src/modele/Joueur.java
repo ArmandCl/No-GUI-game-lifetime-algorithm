@@ -321,6 +321,7 @@ public class Joueur {
      */
     public void ajouterTempsDeplacement(int tempsDeplacement) {
 
+        chTemps += tempsDeplacement;
 
     }
 
