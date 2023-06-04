@@ -271,8 +271,47 @@ public class Joueur {
      * @param quete Quete La quete dont on veut vérifier si la précondition est satisfaite
      * @return boolean True si la précondition est satisfaite et False s'il ne l'ait pas
      */
-    private boolean preconditionsSatisfaitesExhaustive(Quete quete) {
+    public boolean preconditionsSatisfaitesExhaustive(Quete quete) {
+        int[] preconditions = quete.getPrecond();
 
+        // Vérifier les deux premières préconditions
+        if (preconditions[1] == 0 && preconditions[0] != 0) {
+            // Si le deuxième indice est zéro et le premier n'est pas zéro,
+            // alors la quête a une précondition à vérifier
+            int quetePrecondition = preconditions[0];
+            if (!queteCompleteeExhaustive(quetePrecondition)) {
+                return false;
+            }
+        } else if (preconditions[1] != 0) {
+            // Si le deuxième indice n'est pas zéro,
+            // alors la quête a deux préconditions à vérifier
+            int quetePrecondition1 = preconditions[0];
+            int quetePrecondition2 = preconditions[1];
+            if (!queteCompleteeExhaustive(quetePrecondition1) && !queteCompleteeExhaustive(quetePrecondition2)) {
+                return false;
+            }
+        }
+
+        // Vérifier les deux dernières préconditions
+        if (preconditions[3] == 0 && preconditions[2] != 0) {
+            // Si le quatrième indice est zéro et le troisième n'est pas zéro,
+            // alors la quête a une précondition à vérifier
+            int quetePrecondition = preconditions[2];
+            if (!queteCompleteeExhaustive(quetePrecondition)) {
+                return false;
+            }
+        } else if (preconditions[3] != 0) {
+            // Si le quatrième indice n'est pas zéro,
+            // alors la quête a deux préconditions à vérifier
+            int quetePrecondition1 = preconditions[2];
+            int quetePrecondition2 = preconditions[3];
+            if (!queteCompleteeExhaustive(quetePrecondition1) && !queteCompleteeExhaustive(quetePrecondition2)) {
+                return false;
+            }
+        }
+
+        // Toutes les préconditions sont satisfaites
+        return true;
     }
 
     /**
