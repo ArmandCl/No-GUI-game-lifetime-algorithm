@@ -5,6 +5,9 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
+/**
+ * Cette classe nous permettra de tester les différentes méthodes de la classe Quete et de nous assurer qu'elles fonctionnent comme voulu
+ */
 public class QueteTest {
 
     @Test

@@ -2,6 +2,9 @@ package modele;
 
 import java.util.ArrayList;
 
+/**
+ * Cette classe nous servira à utiliser la méthode efficace (gloutonne).
+ */
 public class SolutionEfficace {
     private Scenario scenario;
     private Joueur joueur;
@@ -20,7 +23,7 @@ public class SolutionEfficace {
 
     /**
      * Méthode pour trouver la quête la plus proche en termes de position
-     * @param quetesDisponibles ArrayList<Quete> La liste de quete qui sont disponible ( on a eu cette liste grace à la methode getQuetesDisponibles)
+     * @param quetesDisponibles ArrayList Quete La liste de quete qui sont disponible ( on a eu cette liste grace à la methode getQuetesDisponibles)
      * @return quetePlusProche Quete La quete la plus proche
      */
     public Quete trouverQuetePlusProche(ArrayList<Quete> quetesDisponibles) {

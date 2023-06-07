@@ -4,7 +4,9 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-
+/**
+ * Cette classe nous servira à lire les scénarios et à en extraire les différentes quêtes.
+ */
 public class LectureFichierTexte {
     static Scenario scenario;
 

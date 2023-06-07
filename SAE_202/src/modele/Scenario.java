@@ -4,6 +4,9 @@ package modele;
 import java.util.ArrayList;
 import java.util.TreeMap;
 
+/**
+ * Cette classe nous sera utile pour travailler sur les scénarios, ajouter des quêtes, récupérer la liste de quête du scénario ...
+ */
 public class Scenario {
     private ArrayList<Quete> chQuetes;
     private TreeMap<Integer, ArrayList<Quete>> chTreeMapScenario; //arbre avec pour clé un numéro de scénario et pour valeur une liste de quete
@@ -42,7 +45,7 @@ public class Scenario {
     /**
      * recupere le champ chQuetes
      *
-     * @return chQuetes ArrayList<Quete>
+     * @return chQuetes ArrayList Quete
      */
     public ArrayList<Quete> getChQuetes() {
 
@@ -52,7 +55,7 @@ public class Scenario {
 
     /**
      * récupère le champ chTreeMapScenario
-     * @return chTreeMapScenario TreeMap<Integer, ArrayList<Quete>> L'arbre avec pour clé un numéro de scénario et pour valeur une liste de quete
+     * @return chTreeMapScenario TreeMap Integer, ArrayList Quete L'arbre avec pour clé un numéro de scénario et pour valeur une liste de quete
      */
     public TreeMap<Integer, ArrayList<Quete>> getchTreeMapScenario() {
 

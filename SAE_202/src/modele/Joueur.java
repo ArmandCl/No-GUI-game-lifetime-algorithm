@@ -3,6 +3,9 @@ package modele;
 
 import java.util.ArrayList;
 
+/**
+ * cette classe nous sera utile pour regrouper les différentes informations sur le joueur, à faire des calculs et des actions avec les quêtes.
+ */
 public class Joueur {
     private int chExperience;
     private int chPositionX;
@@ -180,7 +183,7 @@ public class Joueur {
     /**
      * Permet d'avoir une liste de toutes les quetes realisable par le joueur
      * @param scenario Scenario Le scenario que l'on veut parcourir
-     * @return quetesDisponibles ArrayList<Quete> La liste des quetes
+     * @return quetesDisponibles ArrayList Quete La liste des quetes
      */
     public ArrayList<Quete> getQuetesDisponiblesGloutonne(Scenario scenario) {
         ArrayList<Quete> quetesDisponibles = new ArrayList<>();
@@ -199,7 +202,7 @@ public class Joueur {
      * depuis un scenario donné et les mets dans une liste
      *
      * @param scenario Scenario Le scenario dont on veut extraire les quetes disponible pour l'exhaustive
-     * @return quetesDisponibles ArrayList<Quete>
+     * @return quetesDisponibles ArrayList Quete
      */
     public ArrayList<Quete> getQuetesDisponiblesExhaustive(Scenario scenario) {
         ArrayList<Quete> quetesDisponibles = new ArrayList<>();

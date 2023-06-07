@@ -4,7 +4,9 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
-
+/**
+ * Cette classe nous permettra de tester les différentes méthodes de la classe SolutionExhaustive et de nous assurer qu'elles fonctionnent comme voulu.
+ */
 public class SolutionExhaustiveTest {
     @Test
     void trouverQuetePlusProche(){
