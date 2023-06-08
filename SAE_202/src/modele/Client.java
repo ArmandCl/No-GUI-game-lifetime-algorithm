@@ -16,7 +16,7 @@ public class Client {
      * @param args String[]
      */
     public static void main(String[] args) {
-        File file = new File("scenario" + File.separator + "scenario_1.txt");
+        File file = new File("SAE_202"+ File.separator + "scenario" + File.separator + "scenario_1.txt");
         LectureFichierTexte lectureFichierTexte = new LectureFichierTexte();
         lectureFichierTexte.lecture(file);
 
